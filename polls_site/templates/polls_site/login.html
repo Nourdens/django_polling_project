@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Log in</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <table>{{ form }}</table>
+        <input type="submit" value="Login"/>
+    </form>
+    <a href="{% url 'polls_site:signup' %}">Sign Up</a>
+</body>
+</html>
