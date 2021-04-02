@@ -7,7 +7,7 @@
 
 {% if request.user.is_authenticated %}
     <h2> Please, {{ request.user.username }}, choose question of your taste to vote</h2>
-    <p>Press <a href="{% url 'polls_site:logout' %}?next={{ request.path }}">HERE</a> to Logout.           <a href="{% url 'polls_site:index' %}">Refresh</a></p><a href="{% url 'feedback_form:feedback' %}">Feedback form</a>
+    <p>Press <a href="{% url 'polls_site:logout' %}?next={{ request.path }}">HERE</a> to Logout.           <a href="{% url 'polls_site:index' %}">Refresh</a></p>
 
     {% if latest_question_list %}
         <ul>

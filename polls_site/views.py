@@ -29,7 +29,7 @@ def vote(request, question_id):
         try:
             selected_choice = question.choice_set.get(pk=request.POST['choice'])
         except (KeyError, Choice.DoesNotExist):
-            return render(request, 'polls_site/detail.html', { # send back the voting form
+            return render(request, 'polls_site/detail.html', { # send back to the voting form
                 'question': question,
                 'error_message': "You didn't select anything.",
             })
@@ -43,6 +43,9 @@ def vote(request, question_id):
 
 
 #-------------------------------------------------------------------------------------------------------
+#                  AUTHENTICATION
+#-------------------------------------------------------------------------------------------------------
+
 def log_out(request):
     logout(request)
     redirect_url = request.GET.get('next') or reverse('index')
